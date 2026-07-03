@@ -1,34 +1,40 @@
 # ✍️ Interactive Handwritten Digit Recognition Using CNN
 
-A deep learning project that recognizes handwritten digits (0–9) using a **Convolutional Neural Network (CNN)** trained on the **MNIST dataset**. The project features an interactive drawing canvas built with **ipycanvas**, allowing users to draw handwritten digits directly in Google Colab and receive real-time predictions with confidence scores.
+A Convolutional Neural Network (CNN) implementation for handwritten digit recognition using the MNIST dataset. This project is developed with TensorFlow and Keras and includes an interactive drawing canvas built with `ipycanvas`, allowing users to draw digits and obtain real-time predictions directly in Google Colab.
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
-This project demonstrates image classification using a Convolutional Neural Network (CNN) implemented with **TensorFlow** and **Keras**. The model is trained on the MNIST handwritten digit dataset and achieves an impressive **99.55% test accuracy**.
+This project demonstrates the complete workflow of a deep learning image classification system, including:
 
-The notebook also includes an interactive canvas where users can draw digits, preprocess them automatically, and obtain predictions along with confidence scores and the top three predicted classes.
+- Data preprocessing
+- CNN model development
+- Model training and evaluation
+- Performance visualization
+- Interactive handwritten digit prediction
+- Model saving and reloading
 
----
-
-## ✨ Features
-
-- ✅ CNN-based handwritten digit recognition
-- ✅ Trained on the MNIST handwritten digit dataset
-- ✅ Interactive drawing canvas using ipycanvas
-- ✅ Real-time digit prediction
-- ✅ Confidence score for each prediction
-- ✅ Top-3 predicted classes
-- ✅ Training & Validation Accuracy/Loss visualization
-- ✅ Confusion Matrix
-- ✅ Classification Report
-- ✅ Save and reload trained model using `.keras`
-- ✅ Google Colab compatible
+The trained model achieves a **99.55% test accuracy** on the MNIST dataset.
 
 ---
 
-## 🛠 Technologies Used
+## Features
+
+- CNN-based handwritten digit recognition
+- Interactive drawing canvas
+- Real-time digit prediction
+- Prediction confidence score
+- Top-3 predicted classes
+- Accuracy and loss visualization
+- Confusion matrix
+- Classification report
+- Saved trained model (`.keras`)
+- Google Colab compatible
+
+---
+
+## Technologies Used
 
 - Python
 - TensorFlow
@@ -39,96 +45,91 @@ The notebook also includes an interactive canvas where users can draw digits, pr
 - Pillow
 - ipycanvas
 - ipywidgets
-- Google Colab
 
 ---
 
-## 🧠 CNN Architecture
+## Dataset
 
-The implemented CNN consists of:
+The model is trained using the **MNIST Handwritten Digits Dataset**.
 
-- Input Layer (28 × 28 × 1)
-- Conv2D (32 Filters, ReLU)
+| Property | Value |
+|----------|-------|
+| Training Images | 60,000 |
+| Testing Images | 10,000 |
+| Classes | 10 (Digits 0–9) |
+| Image Size | 28 × 28 |
+
+---
+
+## CNN Architecture
+
+The network consists of the following layers:
+
+- Conv2D (32 filters)
 - Batch Normalization
-- Conv2D (32 Filters, ReLU)
+- Conv2D (32 filters)
 - Max Pooling
-- Dropout (25%)
-- Conv2D (64 Filters, ReLU)
+- Dropout
+- Conv2D (64 filters)
 - Batch Normalization
-- Conv2D (64 Filters, ReLU)
+- Conv2D (64 filters)
 - Max Pooling
-- Dropout (25%)
-- Flatten Layer
-- Dense Layer (256 Neurons)
-- Dropout (50%)
-- Output Layer (10 Neurons, Softmax)
+- Dropout
+- Flatten
+- Dense (256 neurons)
+- Dropout
+- Dense (10 neurons, Softmax)
 
 ---
 
-## 📚 Dataset
-
-This project uses the **MNIST Handwritten Digits Dataset**.
-
-- **60,000** training images
-- **10,000** testing images
-- **10 digit classes (0–9)**
-- Image Size: **28 × 28 grayscale**
-
----
-
-## 📊 Model Performance
+## Model Performance
 
 | Metric | Value |
 |---------|------:|
-| Training Accuracy | 99%+ |
-| Validation Accuracy | 99%+ |
-| **Test Accuracy** | **99.55%** |
+| Test Accuracy | **99.55%** |
+| Precision | ~99% |
+| Recall | ~99% |
+| F1-Score | ~99% |
 
-The trained model generalizes well on unseen handwritten digits and provides highly accurate predictions.
-
----
-
-## 🏆 Results
-
-- **Test Accuracy:** **99.55%**
-- Precision: **≈99%**
-- Recall: **≈99%**
-- F1-Score: **≈99%**
-- Successfully predicts digits drawn using the interactive canvas.
+The trained model performs consistently on unseen handwritten digit images and is capable of recognizing user-drawn digits with high accuracy.
 
 ---
 
-## 📸 Screenshots
+## Results
 
-### 📈 Training Accuracy & Loss
+### Training Accuracy and Loss
 
-![Accuracy and Loss](images/accuracy_loss.png)
+![Training Accuracy](images/accuracy_loss.png)
+
+The graph shows the improvement in training and validation performance over multiple epochs, indicating stable convergence with minimal overfitting.
 
 ---
 
-### 📊 Confusion Matrix
+### Confusion Matrix
 
 ![Confusion Matrix](images/confusion_matrix.png)
 
----
-
-### 🎨 Interactive Drawing Canvas
-
-Users can draw handwritten digits directly inside Google Colab.
-
-![Drawing Canvas](images/canvas.png)
+The confusion matrix demonstrates that the trained CNN correctly classifies almost all handwritten digits, with very few misclassifications.
 
 ---
 
-### 🔮 Example Prediction
+### Interactive Drawing Canvas
 
-The model predicts the digit along with confidence and Top-3 probabilities.
+![Canvas](images/canvas.png)
+
+Users can draw a handwritten digit directly within Google Colab using an interactive canvas powered by **ipycanvas**.
+
+---
+
+### Example Prediction
 
 ![Prediction](images/example_prediction.png)
 
+After preprocessing the drawn digit, the model predicts the digit along with its confidence score and the top three predicted classes.
+
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Handwritten-Digit-Recognition-CNN/
@@ -146,21 +147,7 @@ Handwritten-Digit-Recognition-CNN/
 
 ---
 
-## 📦 Requirements
-
-- Python 3.10+
-- TensorFlow
-- Keras
-- NumPy
-- Matplotlib
-- OpenCV
-- Pillow
-- ipycanvas
-- ipywidgets
-
----
-
-## 🚀 Installation
+## Installation
 
 Clone the repository:
 
@@ -168,13 +155,7 @@ Clone the repository:
 git clone https://github.com/tharakvenkat/Handwritten-Digit-Recognition-CNN.git
 ```
 
-Move into the project directory:
-
-```bash
-cd Handwritten-Digit-Recognition-CNN
-```
-
-Install the required libraries:
+Install the required packages:
 
 ```bash
 pip install -r requirements.txt
@@ -182,48 +163,38 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ How to Run
+## Running the Project
 
-1. Open the notebook in **Google Colab**.
-2. Install the required libraries.
+1. Open the notebook in Google Colab.
+2. Install the required dependencies.
 3. Run all notebook cells.
 4. Train the CNN model or load the saved model.
-5. Draw a handwritten digit on the interactive canvas.
-6. Run the prediction cell.
-7. View the predicted digit, confidence score, and Top-3 predictions.
+5. Draw a handwritten digit using the interactive canvas.
+6. Execute the prediction cell to obtain the predicted digit, confidence score, and top three probabilities.
 
 ---
 
-## 🔮 Future Improvements
+## Future Enhancements
 
-- Deploy the model using Streamlit
-- Develop a Flask/Django web application
-- Support multi-digit handwritten recognition
+- Deploy as a Streamlit web application
+- Support multi-digit recognition
+- Extend the model to the EMNIST dataset
 - Improve preprocessing for handwritten paper images
-- Train on EMNIST and other handwritten datasets
-- Add webcam-based digit recognition
+- Integrate webcam-based digit recognition
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Tharak Venkat**
 
-B.Tech Computer Science Engineering  
+B.Tech – Computer Science Engineering  
 VIT-AP University
 
 GitHub: https://github.com/tharakvenkat
 
 ---
 
-## ⭐ Support
+## License
 
-If you found this project useful, please consider giving it a **⭐ Star** on GitHub.
-
-It helps others discover the project and motivates future improvements.
-
----
-
-## 📄 License
-
-This project is intended for educational and learning purposes.
+This project is intended for educational purposes.

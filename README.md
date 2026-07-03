@@ -94,7 +94,7 @@ Handwritten-Digit-Recognition-CNN/
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/Handwritten-Digit-Recognition-CNN.git
+git clone https://github.com/tharakvenkat/Handwritten-Digit-Recognition-CNN.git
 ```
 
 Move into the project directory:
